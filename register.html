@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <header class="grid">
+        <!-- Top Navigation -->
+        <nav class="s-12 grid background-aqua background-primary-hightlight">
+           <!-- logo -->
+           <div class="logo_content d-flex flex-row align-items-end justify-content-start">
+            <div class="logo_img"><img src="img/logo.png" alt=""></div>
+          </div>
+           <div class="top-nav s-12 l-9"> 
+              <ul class="top-ul right chevron">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="department.html">Departments</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="time table.html">Time Table</a></li>
+
+              </ul>
+           </div>
+        </nav>
+      </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        .picture-container{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #e40404;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .picture-container img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+       
+
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="css/style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <title>Faculty Website</title>
+    <!-- CUSTOM STYLE -->      
+    <link rel="stylesheet" href="css/template-style.css"> 
+
+    
+</head>    
+<body>
+    
+    <div class="container">
+        <header>REGISTER</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Middle Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Second Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="Enter birth date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Index Number</label>
+                            <input type="text" placeholder="Enter Index No." required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>emergency no</label>
+                            <input type="text" placeholder="Enter emergency no." required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Admission Date</label>
+                            <input type="date" placeholder="Enter admission date" required>
+                        </div>
+                        <form action="#" method="POST" enctype="multipart/form-data">
+                            <div class="picture-container" >
+                                <img id="uploaded-picture" src="#" alt="Uploaded Picture">
+                            </div>
+                            <input type="file" name="picture" id="picture" accept="image/jpg" onchange="previewPicture(event)">
+                            <button type="submit">Upload</button>
+                        </form>
+
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+
+                    </div>
+                </div>
+
+                </div> 
+            </div>
+        </form>
+    </div>
+
+   
+
+
+    <script>
+        function previewPicture(event){
+            var fileInput = event.target;
+            var pictureContainer = document.getElementById('uploaded-picture');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.online = function(e){
+                pictureContainer.src = e.target.result;
+            }
+            reader.readAsDaraURL(file);
+        }
+    </script>
+
+
+
+</body>
+</html>	
