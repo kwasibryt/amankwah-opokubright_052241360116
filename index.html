@@ -15,6 +15,38 @@
       <link rel="stylesheet" href="css/template-style.css">
 
       <style>
+        /* Inline CSS */
+        .hamburger-menu {
+          display: none;
+        }
+    
+        .hamburger-icon {
+          width: 30px;
+          height: 3px;
+          background-color: #000;
+          margin: 6px 0;
+        }
+    
+        .hamburger-menu ul {
+          display: none;
+        }
+    
+        .hamburger-menu.active ul {
+          display: block;
+        }
+      </style>
+      <script>
+        // Inline JavaScript
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const menuItems = document.querySelector('.hamburger-menu ul');
+    
+        hamburgerMenu.addEventListener('click', function() {
+          this.classList.toggle('active');
+          menuItems.classList.toggle('active');
+        });
+      </script>
+
+      <style>
         h1{
         font-size: 17px;
       }
@@ -24,17 +56,7 @@
 
    </head>
 
-   <!--
-    You can change the color scheme of the page. Just change the class of the <body> tag. 
-    You can use this class: "primary-color-white", "primary-color-red", "primary-color-orange", "primary-color-blue", "primary-color-aqua", "primary-color-dark" 
-    -->
-    
-    <!--
-    Each element is able to have its own background or text color. Just change the class of the element.  
-    You can use this class: 
-    "background-white", "background-red", "background-orange", "background-blue", "background-aqua", "background-primary" 
-    "text-white", "text-red", "text-orange", "text-blue", "text-aqua", "text-primary"
-    -->
+   
 
    <body class="size-1520 primary-color-red background-dark">
       <!-- HEADER -->
@@ -45,8 +67,10 @@
            <div class="logo_content d-flex flex-row align-items-end justify-content-start">
             <div class="logo_img"><img src="img/logo.png" alt=""></div>
           </div>
-           <div class="top-nav s-12 l-9"> 
-              <ul class="top-ul right chevron">
+           <div class="top-nav s-12 l-9">
+              <div class="hamburger-menu"></div> 
+              <div class="hamburger-icon"></div>
+              <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="department.html">Departments</a></li>
                 <li><a href="payment.html">Payment</a></li>
@@ -54,14 +78,16 @@
                 <li><a href="time table.html">Time Table</a></li>
               </ul>
            </div>
+          </div>
+           
         </nav>
       </header>
 
       <!-- MAIN -->
       <main role="main">
         <!-- TOP SECTION -->
+        
         <section class="grid">
-          <!-- Main Carousel -->
           <div class="s-12 margin-bottom carousel-fade-transition owl-carousel carousel-main carousel-nav-white carousel-hide-arrows background-dark">
           	<div class="item background-image" style="background-image:url(img/e.jpg)">
               <p class="text-padding text-strong text-white text-s-size-30 text-size-60 text-uppercase background-primary">Faculty of Applied Science and Technology</p>
